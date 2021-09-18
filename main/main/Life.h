@@ -18,4 +18,6 @@ class Life
 public:
     Life();
     ~Life();
+
+    void runLife();
 };
