@@ -1,6 +1,6 @@
-#include "Life.h"
+﻿#include "Life.h"
 
-main(){
+int main(){
     Life game;
 
     game.runLife();

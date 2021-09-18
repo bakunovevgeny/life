@@ -4,10 +4,14 @@
 #include <iostream>
 using namespace std;
 
-Life::Life(){
-    for (int i = 0; i<a; i++)
-        for (int j = 0; j<b; j++)
-            space[i][j]=0;
+Life::Life() {
+    for (int i = 0; i < a; i++)
+        for (int j = 0; j < b; j++)
+            space[i][j] = 0;
+}
+
+Life::~Life()
+{
 }
 
 int Life::checkRule(int i, int j)
@@ -17,11 +21,11 @@ int Life::checkRule(int i, int j)
 
 void Life::printSpace()
 {
-    for (int i = 0; i<a; i++){
-        for (int j = 0; j<b; j++)
+    for (int i = 0; i < a; i++) {
+        for (int j = 0; j < b; j++)
             if (space[i][j] == 1)
                 cout << "*";
-            else 
+            else
                 cout << " ";
         cout << endl;
     }
@@ -29,13 +33,13 @@ void Life::printSpace()
 
 void Life::generateLife()
 {
-    for (int i = 0; i<a; i++)
-        for (int j = 0; j<b; j++)
+    for (int i = 0; i < a; i++)
+        for (int j = 0; j < b; j++)
             space[i][j] = rand() % 2;
 }
 
 
-void Life::runLife(){
+void Life::runLife() {
     generateLife();
     printSpace();
 }
