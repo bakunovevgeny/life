@@ -168,7 +168,9 @@ namespace life_UI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            nextGen();
+            if (time % (int)nudSpeedGame.Value == 0)
+                nextGen();
+            time++;
         }
 
         private void bStart_Click(object sender, EventArgs e)
