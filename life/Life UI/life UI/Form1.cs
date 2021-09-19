@@ -16,6 +16,7 @@ namespace life_UI
         private int res;
         private bool [,] field;
         private int rows, cols;
+        private int generation = 0, time = 0;
 
         public Form1()
         {
@@ -33,6 +34,8 @@ namespace life_UI
             rows = pictureBox1.Height / res;
             cols = pictureBox1.Width / res;
             field = new bool[cols, rows];
+            time = generation = 0;
+            Text = $"Gen {generation}";
 
             Random random = new Random();
             for (int x = 0; x < cols; x++)
@@ -66,6 +69,8 @@ namespace life_UI
             graphics.Clear(Color.Gray);
 
             var newField = new bool[cols, rows];
+
+            Text = $"Gen {++generation}";
 
             for (int x = 0; x < cols; x++)
             {
@@ -110,6 +115,35 @@ namespace life_UI
                 }
 
             return count;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!timer1.Enabled)
+                return;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                var x = e.Location.X / res;
+                var y = e.Location.Y / res;
+                var validate = MousePositionCheck(x, y);
+                if (validate)
+                    field[x, y] = true;
+            }
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var x = e.Location.X / res;
+                var y = e.Location.Y / res;
+                var validate = MousePositionCheck(x, y);
+                if(validate)
+                    field[x, y] = false;
+            }
+        }
+
+        private bool MousePositionCheck(int x, int y)
+        {
+            return x >= 0 && y >= 0 && x < cols && y < rows;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
