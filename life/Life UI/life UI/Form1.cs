@@ -22,14 +22,13 @@ namespace life_UI
             InitializeComponent();
         }
 
-        private void bStart_Click(object sender, EventArgs e)
+        private void StartGame() 
         {
             if (timer1.Enabled)
                 return;
 
             nudResolution.Enabled = false;
             nudDensity.Enabled = false;
-            bStart.Enabled = false;
             res = (int)nudResolution.Value;
             rows = pictureBox1.Height / res;
             cols = pictureBox1.Width / res;
@@ -48,6 +47,18 @@ namespace life_UI
             graphics = Graphics.FromImage(pictureBox1.Image);
 
             timer1.Start();
+        }
+
+        private void StopGame()
+        {
+            if (!timer1.Enabled)
+                return;
+            else
+                timer1.Stop();
+
+            nudResolution.Enabled = true;
+            nudDensity.Enabled = true;
+
         }
 
         private void nextGen()
@@ -106,9 +117,14 @@ namespace life_UI
             nextGen();
         }
 
+        private void bStart_Click(object sender, EventArgs e)
+        {
+            StartGame();
+        }
+
         private void bStop_Click(object sender, EventArgs e)
         {
-
+            StopGame();
         }
     }
 }

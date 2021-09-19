@@ -32,30 +32,30 @@ namespace life_UI
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.speed = new System.Windows.Forms.Label();
+            this.nudSpeedGame = new System.Windows.Forms.NumericUpDown();
+            this.density = new System.Windows.Forms.Label();
             this.bStop = new System.Windows.Forms.Button();
             this.bStart = new System.Windows.Forms.Button();
             this.nudDensity = new System.Windows.Forms.NumericUpDown();
             this.nudResolution = new System.Windows.Forms.NumericUpDown();
             this.resolution = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.density = new System.Windows.Forms.Label();
-            this.speed = new System.Windows.Forms.Label();
-            this.nudSpeedGame = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
@@ -86,6 +86,46 @@ namespace life_UI
             this.pictureBox1.Size = new System.Drawing.Size(1045, 549);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // speed
+            // 
+            this.speed.AutoSize = true;
+            this.speed.Location = new System.Drawing.Point(12, 108);
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(83, 13);
+            this.speed.TabIndex = 12;
+            this.speed.Text = "Скорость игры";
+            // 
+            // nudSpeedGame
+            // 
+            this.nudSpeedGame.Location = new System.Drawing.Point(15, 124);
+            this.nudSpeedGame.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSpeedGame.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSpeedGame.Name = "nudSpeedGame";
+            this.nudSpeedGame.Size = new System.Drawing.Size(120, 20);
+            this.nudSpeedGame.TabIndex = 11;
+            this.nudSpeedGame.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // density
+            // 
+            this.density.AutoSize = true;
+            this.density.Location = new System.Drawing.Point(12, 62);
+            this.density.Name = "density";
+            this.density.Size = new System.Drawing.Size(118, 13);
+            this.density.TabIndex = 10;
+            this.density.Text = "Плотность заселения";
             // 
             // bStop
             // 
@@ -160,46 +200,6 @@ namespace life_UI
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // density
-            // 
-            this.density.AutoSize = true;
-            this.density.Location = new System.Drawing.Point(12, 62);
-            this.density.Name = "density";
-            this.density.Size = new System.Drawing.Size(118, 13);
-            this.density.TabIndex = 10;
-            this.density.Text = "Плотность заселения";
-            // 
-            // speed
-            // 
-            this.speed.AutoSize = true;
-            this.speed.Location = new System.Drawing.Point(12, 108);
-            this.speed.Name = "speed";
-            this.speed.Size = new System.Drawing.Size(83, 13);
-            this.speed.TabIndex = 12;
-            this.speed.Text = "Скорость игры";
-            // 
-            // nudSpeedGame
-            // 
-            this.nudSpeedGame.Location = new System.Drawing.Point(15, 124);
-            this.nudSpeedGame.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudSpeedGame.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudSpeedGame.Name = "nudSpeedGame";
-            this.nudSpeedGame.Size = new System.Drawing.Size(120, 20);
-            this.nudSpeedGame.TabIndex = 11;
-            this.nudSpeedGame.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,9 +215,9 @@ namespace life_UI
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).EndInit();
             this.ResumeLayout(false);
 
         }
