@@ -15,6 +15,7 @@ namespace life_UI
         private Graphics graphics;
         private int res;
         private bool [,] field;
+        private bool game;
         private int rows, cols;
         private int generation = 0, time = 0;
 
@@ -51,6 +52,7 @@ namespace life_UI
             pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             graphics = Graphics.FromImage(pictureBox1.Image);
 
+            game = true;
             timer1.Start();
         }
 
@@ -59,7 +61,10 @@ namespace life_UI
             if (!timer1.Enabled)
                 return;
             else
+            {
                 timer1.Stop();
+                game = false;
+            }
 
             nudResolution.Enabled = true;
             nudDensity.Enabled = true;
@@ -92,7 +97,6 @@ namespace life_UI
 
                     if (life)
                         graphics.FillRectangle(Brushes.Crimson, x * res, y * res, res, res);
-
                 }
             }
 
@@ -123,7 +127,7 @@ namespace life_UI
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (!timer1.Enabled)
+            if (!game)
                 return;
 
             if (e.Button == MouseButtons.Left)
@@ -132,7 +136,11 @@ namespace life_UI
                 var y = e.Location.Y / res;
                 var validate = MousePositionCheck(x, y);
                 if (validate)
+                {
                     field[x, y] = true;
+                    graphics.FillRectangle(Brushes.Crimson, x * res, y * res, res, res);
+                    pictureBox1.Refresh();
+                }
             }
 
             if (e.Button == MouseButtons.Right)
@@ -140,8 +148,12 @@ namespace life_UI
                 var x = e.Location.X / res;
                 var y = e.Location.Y / res;
                 var validate = MousePositionCheck(x, y);
-                if(validate)
+                if (validate)
+                {
                     field[x, y] = false;
+                    graphics.FillRectangle(Brushes.Gray, x * res, y * res, res, res);
+                    pictureBox1.Refresh();
+                }
             }
         }
 
@@ -170,7 +182,6 @@ namespace life_UI
         {
             if (time % (int)nudSpeedGame.Value == 0)
                 nextGen();
-            time++;
         }
 
         private void bStart_Click(object sender, EventArgs e)
