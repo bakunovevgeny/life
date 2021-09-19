@@ -39,6 +39,8 @@ namespace life_UI
             this.resolution = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.density = new System.Windows.Forms.Label();
+            this.speed = new System.Windows.Forms.Label();
+            this.nudSpeedGame = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -46,6 +48,7 @@ namespace life_UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -63,6 +66,8 @@ namespace life_UI
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.speed);
+            this.splitContainer1.Panel2.Controls.Add(this.nudSpeedGame);
             this.splitContainer1.Panel2.Controls.Add(this.density);
             this.splitContainer1.Panel2.Controls.Add(this.bStop);
             this.splitContainer1.Panel2.Controls.Add(this.bStart);
@@ -84,7 +89,7 @@ namespace life_UI
             // 
             // bStop
             // 
-            this.bStop.Location = new System.Drawing.Point(15, 142);
+            this.bStop.Location = new System.Drawing.Point(15, 189);
             this.bStop.Name = "bStop";
             this.bStop.Size = new System.Drawing.Size(120, 23);
             this.bStop.TabIndex = 6;
@@ -94,7 +99,7 @@ namespace life_UI
             // 
             // bStart
             // 
-            this.bStart.Location = new System.Drawing.Point(15, 113);
+            this.bStart.Location = new System.Drawing.Point(15, 160);
             this.bStart.Name = "bStart";
             this.bStart.Size = new System.Drawing.Size(120, 23);
             this.bStart.TabIndex = 5;
@@ -105,16 +110,41 @@ namespace life_UI
             // nudDensity
             // 
             this.nudDensity.Location = new System.Drawing.Point(15, 78);
+            this.nudDensity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudDensity.Name = "nudDensity";
             this.nudDensity.Size = new System.Drawing.Size(120, 20);
             this.nudDensity.TabIndex = 7;
+            this.nudDensity.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             // 
             // nudResolution
             // 
             this.nudResolution.Location = new System.Drawing.Point(15, 32);
+            this.nudResolution.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudResolution.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudResolution.Name = "nudResolution";
             this.nudResolution.Size = new System.Drawing.Size(120, 20);
             this.nudResolution.TabIndex = 9;
+            this.nudResolution.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // resolution
             // 
@@ -139,6 +169,37 @@ namespace life_UI
             this.density.TabIndex = 10;
             this.density.Text = "Плотность заселения";
             // 
+            // speed
+            // 
+            this.speed.AutoSize = true;
+            this.speed.Location = new System.Drawing.Point(12, 108);
+            this.speed.Name = "speed";
+            this.speed.Size = new System.Drawing.Size(83, 13);
+            this.speed.TabIndex = 12;
+            this.speed.Text = "Скорость игры";
+            // 
+            // nudSpeedGame
+            // 
+            this.nudSpeedGame.Location = new System.Drawing.Point(15, 124);
+            this.nudSpeedGame.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSpeedGame.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSpeedGame.Name = "nudSpeedGame";
+            this.nudSpeedGame.Size = new System.Drawing.Size(120, 20);
+            this.nudSpeedGame.TabIndex = 11;
+            this.nudSpeedGame.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +208,7 @@ namespace life_UI
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -155,6 +217,7 @@ namespace life_UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedGame)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,6 +233,8 @@ namespace life_UI
         private System.Windows.Forms.Button bStart;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label density;
+        private System.Windows.Forms.Label speed;
+        private System.Windows.Forms.NumericUpDown nudSpeedGame;
     }
 }
 
