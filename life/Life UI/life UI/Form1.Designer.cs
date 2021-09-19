@@ -41,6 +41,8 @@ namespace life_UI
             this.nudResolution = new System.Windows.Forms.NumericUpDown();
             this.resolution = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bPause = new System.Windows.Forms.Button();
+            this.bProceed = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,6 +68,8 @@ namespace life_UI
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.bProceed);
+            this.splitContainer1.Panel2.Controls.Add(this.bPause);
             this.splitContainer1.Panel2.Controls.Add(this.speed);
             this.splitContainer1.Panel2.Controls.Add(this.nudSpeedGame);
             this.splitContainer1.Panel2.Controls.Add(this.density);
@@ -201,6 +205,26 @@ namespace life_UI
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // bPause
+            // 
+            this.bPause.Location = new System.Drawing.Point(15, 276);
+            this.bPause.Name = "bPause";
+            this.bPause.Size = new System.Drawing.Size(120, 23);
+            this.bPause.TabIndex = 13;
+            this.bPause.Text = "Пауза";
+            this.bPause.UseVisualStyleBackColor = true;
+            this.bPause.Click += new System.EventHandler(this.bPause_Click);
+            // 
+            // bProceed
+            // 
+            this.bProceed.Location = new System.Drawing.Point(15, 247);
+            this.bProceed.Name = "bProceed";
+            this.bProceed.Size = new System.Drawing.Size(120, 23);
+            this.bProceed.TabIndex = 14;
+            this.bProceed.Text = "продолжить";
+            this.bProceed.UseVisualStyleBackColor = true;
+            this.bProceed.Click += new System.EventHandler(this.bProceed_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +260,8 @@ namespace life_UI
         private System.Windows.Forms.Label density;
         private System.Windows.Forms.Label speed;
         private System.Windows.Forms.NumericUpDown nudSpeedGame;
+        private System.Windows.Forms.Button bProceed;
+        private System.Windows.Forms.Button bPause;
     }
 }
 

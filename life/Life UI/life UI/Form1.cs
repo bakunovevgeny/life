@@ -28,6 +28,8 @@ namespace life_UI
             if (timer1.Enabled)
                 return;
 
+            bPause.Enabled = true;
+            bProceed.Enabled = true;
             nudResolution.Enabled = false;
             nudDensity.Enabled = false;
             res = (int)nudResolution.Value;
@@ -61,6 +63,8 @@ namespace life_UI
 
             nudResolution.Enabled = true;
             nudDensity.Enabled = true;
+            bPause.Enabled = false;
+            bProceed.Enabled = false;
 
         }
 
@@ -139,6 +143,22 @@ namespace life_UI
                 if(validate)
                     field[x, y] = false;
             }
+        }
+
+        private void bPause_Click(object sender, EventArgs e)
+        {
+            if (!timer1.Enabled)
+                return;
+            else
+                timer1.Stop();
+        }
+
+        private void bProceed_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled)
+                return;
+            else
+                timer1.Start();
         }
 
         private bool MousePositionCheck(int x, int y)
