@@ -139,7 +139,8 @@ namespace life_UI
                 {
                     field[x, y] = true;
                     graphics.FillRectangle(Brushes.Crimson, x * res, y * res, res, res);
-                    pictureBox1.Refresh();
+                    if(!timer1.Enabled)
+                        pictureBox1.Refresh();
                 }
             }
 
@@ -152,7 +153,8 @@ namespace life_UI
                 {
                     field[x, y] = false;
                     graphics.FillRectangle(Brushes.Gray, x * res, y * res, res, res);
-                    pictureBox1.Refresh();
+                    if (!timer1.Enabled)
+                        pictureBox1.Refresh();
                 }
             }
         }
