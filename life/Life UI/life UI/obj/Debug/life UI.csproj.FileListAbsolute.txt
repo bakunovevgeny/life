@@ -1,0 +1,10 @@
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\bin\Debug\life UI.exe.config
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\bin\Debug\life UI.exe
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\bin\Debug\life UI.pdb
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life UI.csproj.AssemblyReference.cache
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life_UI.Form1.resources
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life_UI.Properties.Resources.resources
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life UI.csproj.GenerateResource.cache
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life UI.csproj.CoreCompileInputs.cache
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life UI.exe
+C:\Users\ofgad\Desktop\project\life\life\Life UI\life UI\obj\Debug\life UI.pdb
